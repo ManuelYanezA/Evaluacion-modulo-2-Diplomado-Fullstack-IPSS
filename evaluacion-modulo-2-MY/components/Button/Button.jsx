@@ -1,6 +1,6 @@
-function Button({ text, className }) {
+function Button() {
     return(
-        <button type="button" className={className}>{text}</button>
+        <button type="button" className="counter">Texto</button>
     )
 }
 
