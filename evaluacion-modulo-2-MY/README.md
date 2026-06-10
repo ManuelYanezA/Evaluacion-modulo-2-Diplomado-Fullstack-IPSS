@@ -1,4 +1,8 @@
-# React + Vite
+# Evaluación Módulo 2: Manuel Yáñez Arias
+
+Más abajo: Readme creado por Vite.
+
+## React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
