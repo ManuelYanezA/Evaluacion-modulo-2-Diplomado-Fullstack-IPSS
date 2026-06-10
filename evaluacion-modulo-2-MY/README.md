@@ -1,5 +1,14 @@
 # Evaluación Módulo 2: Manuel Yáñez Arias
 
+Se consideran los siguientes componentes para un e-commerce:
+
+- Button
+- Card
+- CardGrid
+- Navbar
+- Footer
+- 
+
 Más abajo: Readme creado por Vite.
 
 ## React + Vite
