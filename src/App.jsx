@@ -31,7 +31,8 @@ function App() {
         </button>
       </section>
 
-      <Button clase="addToCartBtn" titulo="Añadir al Carrito">Add to Cart</Button>
+      <Button clase="addToCartBtn" titulo="Añadir al Carrito"/>
+      <Button clase="seeMoreBtn" titulo="Ver más"/>
 
       <div className="ticks"></div>
 
