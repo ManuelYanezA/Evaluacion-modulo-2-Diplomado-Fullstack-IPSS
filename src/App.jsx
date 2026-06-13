@@ -4,6 +4,7 @@ import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import './App.css'
 import Button from './components/Button/Button.jsx';
+import Image from './components/ImageComponent/Image.jsx';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -33,6 +34,8 @@ function App() {
 
       <Button clase="addToCartBtn" titulo="Añadir al Carrito"/>
       <Button clase="seeMoreBtn" titulo="Ver más"/>
+
+      <Image class="productImage" imageURL="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" isDestacado={true}/>
 
       <div className="ticks"></div>
 
