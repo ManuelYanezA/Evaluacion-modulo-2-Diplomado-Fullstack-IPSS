@@ -1,8 +1,8 @@
 import './CartButton.css';
 
-function CartButton({ cantidad, onClick }) {
+function CartButton({ cantidad, funcion }) {
   return (
-    <button className="cartButton" onClick={onClick}>
+    <button className="cartButton" onClick={funcion}>
       🛒
 
       {cantidad > 0 && (

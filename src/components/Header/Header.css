@@ -6,6 +6,13 @@
     background-color: black;
 }
 
+.headerTop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
 .brandContainer {
     display: flex;
     align-items: center;
