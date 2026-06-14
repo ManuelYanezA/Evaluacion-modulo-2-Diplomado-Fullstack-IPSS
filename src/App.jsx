@@ -14,13 +14,17 @@ function App() {
       [...actual, producto]);
   };
 
+  const eliminarDelCarrito = (indiceProducto) => {
+    setCarrito((actual) => actual.filter((_, i) => i !== indiceProducto));
+  };
+
   return (
     <>
       <Header logo="https://cdn-icons-png.flaticon.com/512/8539/8539259.png" titulo="Tienda Online" abrirCarrito={() => setCarritoAbierto(true)} cantidadCarrito={carrito.length} />
       <Searchbar />
       <ProductList productos={products} onAddToCart={agregarAlCarrito} />
       <Footer titulo="Tienda Online" />
-      <CartDrawer isOpen={carritoAbierto} onClose={() => setCarritoAbierto(false)} carrito={carrito} />
+      <CartDrawer isOpen={carritoAbierto} onClose={() => setCarritoAbierto(false)} carrito={carrito} onRemove={eliminarDelCarrito}/>
     </>
   )
 }

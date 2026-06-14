@@ -1,6 +1,6 @@
 import './CartDrawer.css';
 
-function CartDrawer({ isOpen, onClose, carrito }) {
+function CartDrawer({ isOpen, onClose, carrito, onRemove }) {
     if (!isOpen) return null;
     console.log(carrito);
 
@@ -20,11 +20,16 @@ function CartDrawer({ isOpen, onClose, carrito }) {
                         <p>Tu carrito está vacío.</p>) : (
                             carrito.map((producto, indice) => (
                                 <div key={indice} className="cartItem">
-                                    <img src={producto.imageURL} alt={producto.nombre} />
+                                    <img src={producto.imageURL} alt={producto.nombre} className="cartItemImage" />
+
                                     <div className="cartItemInfo">
                                         <h3>{producto.nombre}</h3>
-                                        <p>${producto.precio}</p>
+                                        <p>{producto.precio}</p>
                                     </div>
+
+                                    <button className="removeButton" onClick={() => onRemove(indice)}>
+                                        X
+                                    </button>
                                 </div>
                             )))
                     }

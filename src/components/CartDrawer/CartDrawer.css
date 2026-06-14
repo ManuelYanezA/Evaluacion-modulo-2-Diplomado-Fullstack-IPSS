@@ -42,3 +42,31 @@
   padding: 20px;
   overflow-y: auto;
 }
+
+.cartItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 12px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.cartItemImage {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.cartItemInfo h3 {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.cartItemInfo p {
+  margin-top: 4px;
+  font-size: 0.85rem;
+  color: #666;
+}
+
