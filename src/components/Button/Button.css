@@ -34,3 +34,22 @@
         color: black;
     }
 }
+
+.searchBtn {
+    background-color: transparent;
+    color: white;
+
+    padding: 0.5rem 1rem;
+    max-width: fit-content;
+
+    cursor: pointer;
+    
+    border: 2px solid white;
+    border-radius: 4px;
+    
+    transition: background-color 0.2s, color 0.2s;
+    &:hover {
+        background-color: white;
+        color: black;
+    }
+}

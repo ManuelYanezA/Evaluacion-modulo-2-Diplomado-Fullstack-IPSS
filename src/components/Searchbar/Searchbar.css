@@ -1,0 +1,14 @@
+.searchBar {
+    display: flex;
+    align-content: center;
+}
+
+.searchInput {
+    width: 70%;
+    padding: 0.5rem;
+    border: 1px solid white;
+    border-radius: 4px;
+    font-size: 1rem;
+    background-color: transparent;
+    color: white;
+}
