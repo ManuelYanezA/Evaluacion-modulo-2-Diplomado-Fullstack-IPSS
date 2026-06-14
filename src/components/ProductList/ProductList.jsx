@@ -1,17 +1,20 @@
 import './ProductList.css';
 import { ProductCard } from '../ProductCard/ProductCard';
 
-function ProductList() {
+function ProductList({ productos }) {
     return (
         <div className="productList">
-            <ProductCard
-                imageURL="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/025.png"
-                nombre="Camiseta de Algodón"
-                precio="$9.990"
-                isDestacado={true}
-                onAddToCart={() => alert("Producto agregado al carrito")}
-                onSeeMore={() => alert("Mostrando más detalles del producto")}
-            />
+            {productos.map((producto) => (
+                <ProductCard
+                    key={producto.id}
+                    imageURL={producto.imageURL}
+                    nombre={producto.nombre}
+                    precio={producto.precio}
+                    isDestacado={producto.isDestacado}
+                    onAddToCart={producto.onAddToCart}
+                    onSeeMore={producto.onSeeMore}
+                />
+            ))}
         </div>
     );
 }
