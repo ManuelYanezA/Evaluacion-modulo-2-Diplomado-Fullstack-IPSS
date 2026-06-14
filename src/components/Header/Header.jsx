@@ -10,7 +10,7 @@ function Header(propiedades) {
                     <img className="logo" src={propiedades.logo} alt={propiedades.titulo} />
                     <h1 className="headerTitle">{propiedades.titulo}</h1>
                 </div>
-                <CartButton cantidad={0} funcion={propiedades.abrirCarrito} />
+                <CartButton cantidad={propiedades.cantidadCarrito} funcion={propiedades.abrirCarrito} />
             </div>
 
             <ul className="navList">
