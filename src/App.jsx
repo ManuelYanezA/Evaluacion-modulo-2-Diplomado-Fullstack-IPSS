@@ -13,6 +13,15 @@ function App() {
         imageURL="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/025.png"
         nombre="Camiseta de Algodón"
         precio="$9.990"
+        isDestacado={true}
+        onAddToCart={() => alert("Producto agregado al carrito")}
+        onSeeMore={() => alert("Mostrando más detalles del producto")}
+      />
+      <ProductCard
+        imageURL="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/025.png"
+        nombre="Camiseta de Lino"
+        precio="$11.990"
+        isDestacado={false}
         onAddToCart={() => alert("Producto agregado al carrito")}
         onSeeMore={() => alert("Mostrando más detalles del producto")}
       />

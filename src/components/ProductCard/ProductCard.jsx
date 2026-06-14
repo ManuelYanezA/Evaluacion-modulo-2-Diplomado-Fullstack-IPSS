@@ -5,7 +5,7 @@ import ProductImage from '../ProductImage/ProductImage';
 function ProductCard(propiedades) {
     return (
         <div className="productCard">
-            <ProductImage clase="productImage" imageURL={propiedades.imageURL} altText={propiedades.nombre} />
+            <ProductImage clase="productImage" imageURL={propiedades.imageURL} altText={propiedades.nombre} isDestacado={propiedades.isDestacado} />
             <h2 className="productName">{propiedades.nombre}</h2>
             <p className="productPrice">{propiedades.precio}</p>
             <div className="buttonContainer">
