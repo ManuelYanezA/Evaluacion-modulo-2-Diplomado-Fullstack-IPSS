@@ -7,8 +7,8 @@ function Header(propiedades) {
                 <img className="logo" src={propiedades.logo} alt={propiedades.titulo} />
                 <h1 className="headerTitle">{propiedades.titulo}</h1>
             </div>
-            
-            <ul>
+
+            <ul className="navList">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#products">Productos</a></li>
                 <li><a href="#about">Sobre Nosotros</a></li>

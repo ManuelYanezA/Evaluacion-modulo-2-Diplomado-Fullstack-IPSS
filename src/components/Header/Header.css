@@ -1,0 +1,56 @@
+.header {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+}
+
+.brandContainer {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    align-self: flex-start;
+}
+.logo {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
+
+.headerTitle {
+    margin: 0;
+    cursor: pointer;
+}
+
+.navList {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    color: lightgray;
+}
+
+.navList li {
+    cursor: pointer;
+
+    transition: color 0.2s;
+    &:hover {
+        color: white;
+    }
+}
+
+.navList a {
+    text-decoration: none;
+    color: inherit;
+}
+
+@media (max-width: 600px) {
+    .navList {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+}
