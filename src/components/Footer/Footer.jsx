@@ -3,7 +3,7 @@ import './Footer.css';
 function Footer(propiedades) {
     return (
         <footer className="footer">
-            <p>&copy; 2026 {propiedades.titulo}. Todos los derechos reservados.</p>
+            <p className="copyright">&copy; 2026 {propiedades.titulo}. Todos los derechos reservados.</p>
             
             <div className="footerLists">
 
