@@ -1,7 +1,7 @@
 import './ProductList.css';
 import ProductCard from '../ProductCard/ProductCard';
 
-function ProductList({ productos }) {
+function ProductList({ productos, onAddToCart }) {
     return (
         <div className="productList">
             {productos.map((producto) => (
@@ -11,7 +11,7 @@ function ProductList({ productos }) {
                     nombre={producto.nombre}
                     precio={producto.precio}
                     isDestacado={producto.isDestacado}
-                    onAddToCart={producto.onAddToCart}
+                    onAddToCart={() => onAddToCart(producto)}
                     onSeeMore={producto.onSeeMore}
                 />
             ))}
