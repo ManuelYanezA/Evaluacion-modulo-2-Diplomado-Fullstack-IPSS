@@ -6,9 +6,11 @@ import { products } from './mocks/products';
 function App() {
   //const [count, setCount] = useState(0)
   //onClick={() => setCount((count) => count + 1)}
+  //const [carritoAbierto, setCarritoAbierto] = useState(false);
+  //const [carrito, setCarrito] = useState([]);
   return (
     <>
-      <Header logo="https://cdn-icons-png.flaticon.com/512/8539/8539259.png" titulo="Tienda Online" />
+      <Header logo="https://cdn-icons-png.flaticon.com/512/8539/8539259.png" titulo="Tienda Online"  />
       <Searchbar />
       <ProductList productos={products} />
       <Footer titulo="Tienda Online" />
