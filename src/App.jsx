@@ -3,8 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import './App.css'
-import Button from './components/Button/Button.jsx';
-import Image from './components/ImageComponent/Image.jsx';
+import { ProductCard } from './components';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -32,11 +31,13 @@ function App() {
         </button>
       </section>
 
-      <Button clase="addToCartBtn" titulo="Añadir al Carrito"/>
-      <Button clase="seeMoreBtn" titulo="Ver más"/>
-
-      <Image class="productImage" imageURL="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" isDestacado={true}/>
-
+      <ProductCard
+        imageURL="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/025.png"
+        nombre="Camiseta de Algodón"
+        precio="$9.990"
+        onAddToCart={() => alert("Producto agregado al carrito")}
+        onSeeMore={() => alert("Mostrando más detalles del producto")}
+      />
       <div className="ticks"></div>
 
       <section id="next-steps">

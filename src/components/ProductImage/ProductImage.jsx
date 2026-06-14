@@ -1,6 +1,7 @@
-import "./Image.css";
+import "./ProductImage.css";
 
-function Image (propiedades) {
+function ProductImage (propiedades) {
+    console.log(propiedades);
     return (
         <div className="imageContainer">
             {propiedades.isDestacado === true &&
@@ -9,9 +10,9 @@ function Image (propiedades) {
                 </div>)
             }
 
-            <img className={propiedades.class} src={propiedades.imageURL}></img>
+            <img className={propiedades.clase} src={propiedades.imageURL} alt={propiedades.altText} />
         </div>
     )
 }
 
-export default Image;
+export default ProductImage;
