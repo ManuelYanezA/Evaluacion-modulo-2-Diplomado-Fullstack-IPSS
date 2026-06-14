@@ -2,29 +2,15 @@
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import './App.css'
-import { ProductCard } from './components';
+import { ProductList } from './components';
+import { products } from './mocks/products';
 
 function App() {
   //const [count, setCount] = useState(0)
   //onClick={() => setCount((count) => count + 1)}
   return (
     <>
-      <ProductCard
-        imageURL="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/025.png"
-        nombre="Camiseta de Algodón"
-        precio="$9.990"
-        isDestacado={true}
-        onAddToCart={() => alert("Producto agregado al carrito")}
-        onSeeMore={() => alert("Mostrando más detalles del producto")}
-      />
-      <ProductCard
-        imageURL="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/025.png"
-        nombre="Camiseta de Lino"
-        precio="$11.990"
-        isDestacado={false}
-        onAddToCart={() => alert("Producto agregado al carrito")}
-        onSeeMore={() => alert("Mostrando más detalles del producto")}
-      />
+      <ProductList productos={products} />
       <div className="ticks"></div>
 
       <section id="next-steps">
