@@ -70,3 +70,21 @@
   color: #666;
 }
 
+.removeButton {
+  margin-left: auto;
+  width: 32px;
+  height: 32px;
+
+  border: solid #ddd 1px;
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  background-color: transparent;
+
+  transition: background-color 0.2s, color 0.2s;
+}
+.removeButton:hover {
+  background-color: white;
+  color: black;
+}
