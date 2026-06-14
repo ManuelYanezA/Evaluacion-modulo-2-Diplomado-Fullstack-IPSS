@@ -2,7 +2,7 @@
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import './App.css'
-import { ProductList, Header } from './components';
+import { ProductList, Header, Footer } from './components';
 import { products } from './mocks/products';
 
 function App() {
@@ -12,6 +12,7 @@ function App() {
     <>
       <Header logo="https://cdn-icons-png.flaticon.com/512/8539/8539259.png" titulo="Tienda Online" />
       <ProductList productos={products} />
+      <Footer titulo="Tienda Online" />
       <div className="ticks"></div>
 
       <section id="next-steps">
