@@ -1,7 +1,6 @@
 import "./ProductImage.css";
 
 function ProductImage (propiedades) {
-    console.log(propiedades);
     return (
         <div className="imageContainer">
             {propiedades.isDestacado === true &&
