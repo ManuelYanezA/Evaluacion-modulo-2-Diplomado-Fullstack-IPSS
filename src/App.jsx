@@ -4,16 +4,19 @@ import { ProductList, Header, Footer, Searchbar, CartDrawer } from './components
 import { products } from './mocks/products';
 
 function App() {
-  //const [count, setCount] = useState(0)
-  //onClick={() => setCount((count) => count + 1)}
+  // Estado para controlar si el carrito está abierto o cerrado
   const [carritoAbierto, setCarritoAbierto] = useState(false);
+
+  // Estado para almacenar los productos en el carrito
   const [carrito, setCarrito] = useState([]);
 
+  // Función para agregar un producto al carrito
   const agregarAlCarrito = (producto) => {
     setCarrito((actual) => 
       [...actual, producto]);
   };
 
+  // Función para eliminar un producto del carrito, basado en su índice
   const eliminarDelCarrito = (indiceProducto) => {
     setCarrito((actual) => actual.filter((_, i) => i !== indiceProducto));
   };

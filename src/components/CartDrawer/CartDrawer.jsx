@@ -1,11 +1,9 @@
 import './CartDrawer.css';
 
 function CartDrawer({ isOpen, onClose, carrito, onRemove }) {
+    // Si el carrito no está abierto, no renderizamos nada
     if (!isOpen) return null;
-    console.log(carrito);
 
-    console.log(typeof carrito[0]?.precio);
-    console.log(carrito[0]?.precio);
     return (
         <div className="drawerOverlay" onClick={onClose}>
             <div className="cartDrawer" onClick={(e) => e.stopPropagation()}>

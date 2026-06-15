@@ -1,18 +1,40 @@
-# React + Vite
+# Evaluación Diplomado FullStack IPSS - Módulo 2
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Manuel Yáñez Arias
 
-Currently, two official plugins are available:
+## Plantilla de e-commerce
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Plantilla bajo contexto de uso para tiendas de ropa. Usada para evaluación del Módulo 2 del Diplomado: Desarrollo con React.
 
-## React Compiler
+## Componentes creados
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+- Button
+- CartButton
+- CartDrawer (Contenedor de productos que se agregaron al carrito)
+- Footer
+- Header
+- ProductCard
+- ProductImage
+- ProductList (Para almacenar todos los productos en un contenedor común)
+- Searchbar
 
-Note: This will impact Vite dev & build performances.
+## Instrucciones para ejecutar el proyecto
 
-## Expanding the ESLint configuration
+```bash
+git clone https://github.com/ManuelYanezA/Evaluacion-modulo-2-Diplomado-Fullstack-IPSS.git
+cd Evaluacion-modulo-2-Diplomado-Fullstack-IPSS
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+#Si es primera vez que inicia el proyecto:
+npm install
+
+#Una vez ejecutado npm install:
+npm run dev
+
+#Aparecerá un mensaje de que el proyecto está listo, le dará una dirección en localhost a la que podrá ingresar desde su navegador para probar el proyecto.
+```
+
+## Tecnologías usadas
+
+React + Vite (Configurado para que sea un proyecto de React Javascript + compilador)
+
+## Capturas de Pantalla
