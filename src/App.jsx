@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import './App.css'
-import { ProductList, Header, Footer, Searchbar, CartDrawer } from './components';
+import { ProductList, Header, Footer, Searchbar, CartDrawer, Loader, ErrorMessage } from './components';
 // import { products } from './mocks/products';
 
 function App() {
@@ -20,6 +20,9 @@ function App() {
   // Estado para almacenar el texto de búsqueda
   const [textoBusqueda, setTextoBusqueda] = useState('');
 
+  // Estado para mostrar mensaje de error
+  const [error,setError] = useState(null);
+
   // Función para agregar un producto al carrito
   const agregarAlCarrito = (producto) => {
     setCarrito((actual) => 
@@ -35,40 +38,67 @@ function App() {
   useEffect(() => {
 
     const obtenerProductos = async () => {
+
       try {
+
+        setCargando(true);
+
+        // Limpiar errores anteriores
+        setError(null);
 
         const respuesta = await fetch(
           'https://dummyjson.com/products'
         );
 
+        if (!respuesta.ok) {
+
+          throw new Error('No se pudieron obtener productos');
+
+        }
+
         const datos = await respuesta.json();
 
-        // Adaptar estructura API -> estructura app
-        const productosAdaptados = datos.products.map(producto => ({
+        const productosAdaptados =
+        datos.products.map(producto => ({
+
           id: producto.id,
           nombre: producto.title,
           precio: `$${producto.price}`,
           imageURL: producto.thumbnail,
-          isDestacado: producto.rating >= 4.5
-        }));
+          isDestacado:
+            producto.rating >= 4.5
 
-        setProductos(productosAdaptados);
+        }
+      )
+    );
 
-      } catch(error) {
+      setProductos(
+        productosAdaptados
+      );
 
-        console.error(
-          'Error obteniendo productos:',
-          error
-        );
+    }
+    catch(errorAPI) {
 
-      } finally {
-        setCargando(false);
-      }
-    };
+      console.error(
+        'Error obteniendo productos:',
+        errorAPI
+      );
 
-    obtenerProductos();
+      // Guardar mensaje en estado
+      setError(errorAPI.message);
 
-  }, []);
+    }
+    finally {
+
+      setCargando(false);
+
+    }
+
+  };
+
+  obtenerProductos();
+
+}, []);
 
   // Filtrar productos según el texto de búsqueda
   const productosFiltrados = productos.filter(
@@ -84,15 +114,14 @@ function App() {
       <Header logo="https://cdn-icons-png.flaticon.com/512/8539/8539259.png" titulo="Tienda Online" abrirCarrito={() => setCarritoAbierto(true)} cantidadCarrito={carrito.length} />
       <Searchbar textoBusqueda={textoBusqueda} setTextoBusqueda={setTextoBusqueda}/>
       {
-        cargando
-        ? <p>Cargando productos...</p>
-        : (
-          <ProductList
+    cargando? <Loader/>: error? <ErrorMessage mensaje={error}/>
+    : (
+        <ProductList
             productos={productosFiltrados}
             onAddToCart={agregarAlCarrito}
-          />
-        )
-      }
+        />
+    )
+}
       <Footer titulo="Tienda Online" />
       <CartDrawer isOpen={carritoAbierto} onClose={() => setCarritoAbierto(false)} carrito={carrito} onRemove={eliminarDelCarrito}/>
     </>
