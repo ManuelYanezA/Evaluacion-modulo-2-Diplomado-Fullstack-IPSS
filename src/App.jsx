@@ -73,8 +73,7 @@ function App() {
   // Filtrar productos según el texto de búsqueda
   const productosFiltrados = productos.filter(
   producto =>
-    producto.nombre
-      .toLowerCase()
+    producto.nombre?.toLowerCase()
       .includes(
         textoBusqueda.toLowerCase()
       )
