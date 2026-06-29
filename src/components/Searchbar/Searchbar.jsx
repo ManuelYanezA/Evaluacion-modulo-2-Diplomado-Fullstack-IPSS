@@ -1,11 +1,9 @@
 import './Searchbar.css';
-import Button from '../Button/Button';
 
-function Searchbar() {
+function Searchbar({ textoBusqueda, setTextoBusqueda}) {
   return (
     <div className="searchbar">
-      <input className="searchInput" type="text" placeholder="Buscar productos..." />
-      <Button clase="searchBtn" titulo="Buscar" onClick={() => alert('Funcionalidad de búsqueda no implementada')} />
+      <input className="searchInput" type="text" placeholder="Buscar productos..." value={textoBusqueda} onChange={(evento) => setTextoBusqueda(evento.target.value)}/>
     </div>
   );
 }

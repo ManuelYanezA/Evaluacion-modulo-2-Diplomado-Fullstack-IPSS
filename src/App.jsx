@@ -17,6 +17,9 @@ function App() {
   // Estado para almacenar los productos en el carrito
   const [carrito, setCarrito] = useState([]);
 
+  // Estado para almacenar el texto de búsqueda
+  const [textoBusqueda, setTextoBusqueda] = useState('');
+
   // Función para agregar un producto al carrito
   const agregarAlCarrito = (producto) => {
     setCarrito((actual) => 
@@ -28,6 +31,7 @@ function App() {
     setCarrito((actual) => actual.filter((_, i) => i !== indiceProducto));
   };
 
+  // useEffect para obtener productos desde la API al montar el componente
   useEffect(() => {
 
     const obtenerProductos = async () => {
@@ -66,16 +70,26 @@ function App() {
 
   }, []);
 
+  // Filtrar productos según el texto de búsqueda
+  const productosFiltrados = productos.filter(
+  producto =>
+    producto.nombre
+      .toLowerCase()
+      .includes(
+        textoBusqueda.toLowerCase()
+      )
+);
+
   return (
     <>
       <Header logo="https://cdn-icons-png.flaticon.com/512/8539/8539259.png" titulo="Tienda Online" abrirCarrito={() => setCarritoAbierto(true)} cantidadCarrito={carrito.length} />
-      <Searchbar />
+      <Searchbar textoBusqueda={textoBusqueda} setTextoBusqueda={setTextoBusqueda}/>
       {
         cargando
         ? <p>Cargando productos...</p>
         : (
           <ProductList
-            productos={productos}
+            productos={productosFiltrados}
             onAddToCart={agregarAlCarrito}
           />
         )
